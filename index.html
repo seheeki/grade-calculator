@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>학점 계산기</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th {
+        color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav id="navbar">
+      <div class="navbar__option">
+        <select name="allPoint">
+          <option value="4.5">4.5 만점</option>
+          <option value="4.3">4.3 만점</option>
+        </select>
+        <input type="checkbox" checked />F학점포함
+      </div>
+      <div>
+        <button>+과목추가</button>
+      </div>
+    </nav>
+    <!-- 표 -->
+    <!--<table border="1">
+      <tr>
+        <th>과목</th>
+        <th>점수</th>
+        <th>학점</th>
+        <th>전공</th>
+      </tr>
+      <tr>
+        <td><input type="text" size="18px" /></td>
+        <td>
+          <select name="score">
+            <option value="none">선택</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="D+">D+</option>
+            <option value="D">D</option>
+            <option value="F">F</option>
+          </select>
+        </td>
+        <td><input type="text" size="5px" /></td>
+        <td><input type="checkbox" /></td>
+      </tr>
+    </table>-->
+
+    <script type="text/javascript">
+      var row = Number(8);
+      var col = Number(4);
+      var subAry = ["과목", "점수", "학점", "전공"];
+      document.write("<table border='1'>");
+      for (r = 0; r < row; r++) {
+        document.write("<tr>");
+        for (c = 0; c < col; c++) {
+          if (r == 0) {
+            document.write("<th>");
+            document.write(subAry[c]);
+            document.write("</th>");
+          } else {
+            document.write("<td>");
+            switch (c) {
+              case 0:
+                document.write("<input type='text' size='18px' />");
+                break;
+              case 1:
+                document.write("<select name='score'>");
+                document.write("<option value='none'>선택</option>");
+                document.write("<option value='A+'>A+</option>");
+                document.write("<option value='A'>A</option>");
+                document.write("<option value='B+'>B+</option>");
+                document.write("<option value='B'>B</option>");
+                document.write("<option value='C+'>C+</option>");
+                document.write("<option value='C'>C</option>");
+                document.write("<option value='D+'>D+</option>");
+                document.write("<option value='D'>D</option>");
+                document.write("<option value='F'>F</option></select>");
+                break;
+              case 2:
+                document.write("<input type='text' size='5px' /></td>");
+                break;
+              case 3:
+                document.write("<input type='checkbox' />");
+                break;
+              default:
+                break;
+            }
+            document.write("</td>");
+          }
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>
